@@ -34,15 +34,23 @@ getNumber()
       
  
       
-echo "this is the start of the script" 
+echo "This is a guessing game" 
       
-getNumber "please type a number between 1 and 10" 1 10 
-      
-echo "Thank you!" 
-      
-getNumber "please type a number between 50 and 100" 50 100 
-      
-echo "Thank you!" 
+
+
+    while [$reply != 42 ] do 
+getNumber "Please type a number between 1 and 100" 1 100 
+
+        if [[ $reply < 42 ]] then 
+            echo "Too low!"
+        elif [[ $reply > 42 ]] then 
+            echo "Too high!"
+        elif [[ $reply = 42 ]]    
+            echo "Correct!"
+        fi
+   done
+
+
 
 # References
 # Edith Cowan University. (n.d.). Scripting Lanuages.Understand and execute scripts that use multiple functions. Blackboard. 
