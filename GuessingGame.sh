@@ -22,7 +22,7 @@ getNumber()
       
     read -p "$1: " 
       
-    while (( $REPLY < $2 || $REPLY> $3 )); do 
+    while (( $REPLY < $2 || $REPLY > $3 )); do 
       
         printError "Input must be between $2 and $3" 
       
@@ -36,20 +36,24 @@ getNumber()
       
 echo "This is a guessing game" 
       
-
-
-    while [$reply != 42 ] do 
-getNumber "Please type a number between 1 and 100" 1 100 
-
-        if [[ $reply < 42 ]] then 
+# The loop will continue to run until the number 42 is inputed.
+while [ "$result" != 42 ] 
+do
+# The function GetNumber is run and screens out any numbers outside 1-100
+    getNumber "Please type a number between 1 and 100" 1 100  
+    result=$REPLY
+          if (( $result < 41 )); then 
+# identifies if number is too low.
             echo "Too low!"
-        elif [[ $reply > 42 ]] then 
+# identifies if number is too high.
+        elif (( $result > 43 )); then
             echo "Too high!"
-        elif [[ $reply = 42 ]]    
+        else 
+# If 42 is inputed the script finishes.
             echo "Correct!"
         fi
-   done
-
+   
+done
 
 
 # References

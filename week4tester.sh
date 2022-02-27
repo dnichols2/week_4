@@ -39,4 +39,5 @@ echo "This is a guessing game"
 getNumber "Please type a number between 1 and 100" 1 100 
 
    
-echo "You entered: $REPLY"
+result=$REPLY
+echo "Its $result"
