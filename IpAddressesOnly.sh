@@ -2,7 +2,7 @@
 # Derek Nicholson February 2022      
 # Obtains info about networking from the ifconfig command only only displays IP Address lines 
       
-ip_info="$(IpInfo.sh)" 
+ip_info="$(./IpInfo.sh)" 
       
 #parse out the ip address lines using sed 
       
