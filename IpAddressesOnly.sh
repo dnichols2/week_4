@@ -1,21 +1,17 @@
 #!/bin/bash 
 # Derek Nicholson February 2022      
-# Obtains info about networking from the ifconfig command 
+# Obtains info about networking from the ifconfig command only only displays IP Address lines 
       
-net_info="$(ifconfig)" 
+ip_info="$(IpInfo.sh)" 
       
 #parse out the ip address lines using sed 
       
-addresses=$(echo "$net_info" | sed -n '/inet / {     
-s/inet/IP Address:/      
-s/netmask/\n\t\tSubnet Mask:/     
-s/broadcast/\n\t\tBroadcast Address:/      
-p       
-}') 
+echo "$ip_info" | sed -n /IP/p   
+
       
 #format output 
       
-echo -e "IP addresses on this computer are:\n$addresses" 
+#echo -e "IP addresses on this computer are:\n$addresses" 
      
 # References
 # Edith Cowan University. (n.d.). Scripting Lanuages: Write scripts that can parse text in a meaningful way. Blackboard. 
