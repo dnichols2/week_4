@@ -50,7 +50,7 @@ do
             echo "Too high!"
         else 
 # If 42 is inputed the script finishes.
-            echo "Correct!"
+            echo "Right!"
         fi
    
 done
